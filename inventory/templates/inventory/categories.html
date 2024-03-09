@@ -1,0 +1,52 @@
+<!-- templates/inventory/categories.html -->
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Categories</title>
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+</head>
+<body>
+    <h1>Inventory Categories</h1>
+    <form  method="GET">
+        <label for="category-select">Select Category:</label>
+        <select id="category-select" name="category">
+            <option value="">-- Select Category --</option>
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if inventory_items %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Unit</th>
+            <th>Cost per Unit</th>
+            <th>Pack Size</th>
+            <th>Supplier</th>
+        </tr>
+        {% for item in inventory_items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.unit }}</td>
+                <td>{{ item.cost_per_unit }}</td>
+                <td>{{ item.pack_size }}</td>
+                <td>{{ item.supplier }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <div id="no-inventory-items">
+            <p>No inventory items available for {{ selected_category }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

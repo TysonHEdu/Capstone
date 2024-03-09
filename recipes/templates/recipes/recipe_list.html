@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe List</title>
+</head>
+<body>
+    <h1>Recipes</h1>
+    <form method="post">
+        {% csrf_token %}
+        <select name="recipe">
+            {% for recipe in recipes %}
+                <option value="{{ recipe.name }}">{{ recipe.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show Recipe</button>
+    </form>
+
+    {% if selected_recipe %}
+        <h2>{{ selected_recipe.name }}</h2>
+        <h3>Ingredients:</h3>
+        <ul>
+            {% for ingredient in selected_recipe.ingredients %}
+                <li>{{ ingredient.ingredient }}: {{ ingredient.quantity }} {{ ingredient.unit }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Instructions:</h3>
+        <ol>
+            {% for step in selected_recipe.cooking_process %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</body>
+</html>

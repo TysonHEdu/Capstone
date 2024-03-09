@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="register-container">
+        <h1>NVMT SMART</h1>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_username">Username:</label><br>
+                {{ form.username }}<br>
+            </div>
+            <div class="form-group">
+                <label for="id_password1">Password:</label><br>
+                {{ form.password1 }}<br>
+            </div>
+            <div class="form-group">
+                <label for="id_password2">Confirm Password:</label><br>
+                {{ form.password2 }}<br>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+[
+    {
+        "name": "Bruschetta al Pomodoro",
+        "ingredients": [
+            {
+                "ingredient": "ripe tomatoes",
+                "quantity": "4",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "garlic cloves",
+                "quantity": "2",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "fresh basil",
+                "quantity": "10",
+                "unit": "leaves"
+            },
+            {
+                "ingredient": "extra virgin olive oil",
+                "quantity": "2",
+                "unit": "tablespoons"
+            },
+            {
+                "ingredient": "balsamic vinegar",
+                "quantity": "1",
+                "unit": "teaspoon"
+            },
+            {
+                "ingredient": "salt",
+                "quantity": "to taste",
+                "unit": ""
+            },
+            {
+                "ingredient": "pepper",
+                "quantity": "to taste",
+                "unit": ""
+            },
+            {
+                "ingredient": "baguette",
+                "quantity": "1",
+                "unit": "loaf"
+            }
+        ],
+        "cooking_process": [
+            "Dice the tomatoes and place in a mixing bowl.",
+            "Finely chop the garlic and basil, then add to the tomatoes.",
+            "Add olive oil, balsamic vinegar, salt, and pepper to the bowl and mix well.",
+            "Slice the baguette, toast the slices until golden brown.",
+            "Spoon the tomato mixture onto the toasted bread slices right before serving."
+        ]
+    },
+    {
+        "name": "Caprese Salad Skewers",
+        "ingredients": [
+            {
+                "ingredient": "cherry tomatoes",
+                "quantity": "20",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "mozzarella balls",
+                "quantity": "20",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "fresh basil leaves",
+                "quantity": "40",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "extra virgin olive oil",
+                "quantity": "2",
+                "unit": "tablespoons"
+            },
+            {
+                "ingredient": "balsamic glaze",
+                "quantity": "1",
+                "unit": "tablespoon"
+            },
+            {
+                "ingredient": "salt",
+                "quantity": "to taste",
+                "unit": ""
+            },
+            {
+                "ingredient": "pepper",
+                "quantity": "to taste",
+                "unit": ""
+            }
+        ],
+        "cooking_process": [
+            "Thread a cherry tomato, a basil leaf, a mozzarella ball, and another basil leaf onto a skewer. Repeat with the remaining ingredients.",
+            "Arrange the skewers on a platter.",
+            "Drizzle with olive oil and balsamic glaze.",
+            "Season with salt and pepper to taste."
+        ]
+    },
+    {
+        "name": "Arancini Di Riso",
+        "ingredients": [
+            {
+                "ingredient": "arborio rice",
+                "quantity": "2",
+                "unit": "cups"
+            },
+            {
+                "ingredient": "vegetable broth",
+                "quantity": "4",
+                "unit": "cups"
+            },
+            {
+                "ingredient": "Parmesan cheese",
+                "quantity": "1/2",
+                "unit": "cup"
+            },
+            {
+                "ingredient": "mozzarella cheese",
+                "quantity": "1/2",
+                "unit": "cup",
+                "description": "cubed"
+            },
+            {
+                "ingredient": "eggs",
+                "quantity": "2",
+                "unit": "pieces"
+            },
+            {
+                "ingredient": "bread crumbs",
+                "quantity": "1",
+                "unit": "cup"
+            },
+            {
+                "ingredient": "salt",
+                "quantity": "to taste",
+                "unit": ""
+            },
+            {
+                "ingredient": "pepper",
+                "quantity": "to taste",
+                "unit": ""
+            },
+            {
+                "ingredient": "oil",
+                "quantity": "for frying",
+                "unit": ""
+            }
+        ],
+        "cooking_process": [
+            "Cook the arborio rice in vegetable broth until tender. Let it cool.",
+            "Mix in Parmesan cheese, one beaten egg, salt, and pepper.",
+            "Form the rice mixture into balls, inserting a cube of mozzarella in the center of each ball.",
+            "Dip the rice balls first in the remaining beaten egg, then roll in breadcrumbs.",
+            "Heat oil in a deep fryer or large pot to 375\u00b0F (190\u00b0C). Fry the rice balls until golden brown.",
+            "Drain on paper towels before serving."
+        ]
+    }
+]

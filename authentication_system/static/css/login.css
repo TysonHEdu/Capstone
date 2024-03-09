@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #696969; /* Change background color */
+    border-radius: 15px; /* Increase border radius for smoother corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+    padding: 30px;
+    width: 50%; /* Increase width for better spacing */
+    height: auto; /* Change height to auto */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 80px; /* Increase margin for more space */
+    color: #D9D9D9; /* Change text color */
+    font-size: 60px; /* Increase font size */
+    margin-top: 20px; /* Shift text downward */
+}
+
+.form-group {
+    text-align: center;
+    margin-bottom: 25px; /* Increase spacing between form groups */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: calc(100% - 40px); /* Adjust input width to leave more space for padding */
+    padding: 15px; /* Increase padding for bigger input boxes */
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-top: 2px; /* Adjust margin */
+    margin-left: auto; /* Center align input horizontally */
+    margin-right: auto; /* Center align input horizontally */
+    text-align: center; /* Center align the placeholder text */
+    font-size: 30px;
+}
+
+
+button {
+    width: 60%;
+    padding: 10px; /* Decrease padding for thinner button */
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: #d3117c;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error {
+    color: white;
+    font-weight: bold;
+    background-color: #d82612; /* Light red background */
+    padding: 10px; /* Padding around the message */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Add some space below the message */
+    width: 90%;
+    margin-left: auto; /* Center the error message horizontally */
+    margin-right: auto; /* Center the error message horizontally */
+}
