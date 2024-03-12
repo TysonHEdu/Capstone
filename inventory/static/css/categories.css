@@ -1,65 +1,95 @@
-/* categories.css */
-
+/* Your CSS styles here */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 form {
     margin-bottom: 20px;
 }
 
-#category-select {
-    padding: 8px;
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
     font-size: 16px;
 }
 
-button {
-    padding: 10px 20px;
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
+.btn:hover {
     background-color: #0056b3;
 }
 
-#inventory-items {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-#inventory-items h2 {
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 8px 0;
+th, td {
+    padding: 10px;
     border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
-ul li:last-child {
-    border-bottom: none;
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.total-price {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
 }

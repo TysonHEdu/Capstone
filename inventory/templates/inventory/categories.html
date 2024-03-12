@@ -1,52 +1,86 @@
-<!-- templates/inventory/categories.html -->
-{%load static%}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Categories</title>
-    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+    <title>NVNT Inventory Tracking</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/categories.css">
+
 </head>
 <body>
-    <h1>Inventory Categories</h1>
-    <form  method="GET">
-        <label for="category-select">Select Category:</label>
-        <select id="category-select" name="category">
-            <option value="">-- Select Category --</option>
-            {% for category in categories %}
-                <option value="{{ category.id }}">{{ category.name }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Submit</button>
-    </form>
-
-    {% if inventory_items %}
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Unit</th>
-            <th>Cost per Unit</th>
-            <th>Pack Size</th>
-            <th>Supplier</th>
-        </tr>
-        {% for item in inventory_items %}
-            <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.category }}</td>
-                <td>{{ item.unit }}</td>
-                <td>{{ item.cost_per_unit }}</td>
-                <td>{{ item.pack_size }}</td>
-                <td>{{ item.supplier }}</td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-        <div id="no-inventory-items">
-            <p>No inventory items available for {{ selected_category }}</p>
+    <div class="container">
+        <h1>NVNT Inventory Tracking</h1>
+        <div>
+            <label for="category">Select Category:</label>
+            <select id="category">
+                <option value="vegetables">Vegetables</option>
+                <option value="meat">Meat</option>
+                <option value="frozen">Frozen Items</option>
+                <option value="beverages">Beverages</option>
+            </select>
         </div>
-    {% endif %}
+        <div id="vegetables" class="produce-options">
+            <label for="vegetableProduce">Select Produce:</label>
+            <select id="vegetableProduce">
+                <option value="Lettuce">Lettuce</option>
+                <option value="Tomatoes">Tomatoes</option>
+                <option value="Onions">Onions</option>
+                <option value="Bell Peppers">Bell Peppers</option>
+                <option value="Carrots">Carrots</option>
+            </select>
+            <div class="weight-box" id="vegetableWeight">lbs</div>
+        </div>
+        <div id="meat" class="produce-options">
+            <label for="meatProduce">Select Meat:</label>
+            <select id="meatProduce">
+                <option value="Chicken Breast">Chicken Breast</option>
+                <option value="Ground Beef">Ground Beef</option>
+                <option value="Pork Chops">Pork Chops</option>
+                <option value="Salmon Fillet">Salmon Fillet</option>
+                <option value="Lamb Rack">Lamb Rack</option>
+            </select>
+            <div class="weight-box" id="meatWeight">lbs</div>
+        </div>
+        <div id="frozen" class="produce-options">
+            <label for="frozenProduce">Select Frozen Item:</label>
+            <select id="frozenProduce">
+                <option value="Frozen Fries">Frozen Fries</option>
+                <option value="Frozen Fish">Frozen Fish</option>
+                <option value="Frozen Pizza">Frozen Pizza</option>
+            </select>
+        </div>
+        <div id="beverages" class="produce-options">
+            <label for="beverageProduce">Select Beverage:</label>
+            <select id="beverageProduce">
+                <option value="Soda Cans">Soda Cans</option>
+                <option value="Bottled Water">Bottled Water</option>
+                <option value="Orange Juice">Orange Juice</option>
+                <option value="Iced Tea">Iced Tea</option>
+            </select>
+        </div>
+        <div>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" class="quantity-input" min="1" value="1">
+        </div>
+        <button class="btn" id="addBtn">Add Item to Cart</button>
+        <div class="total-price" id="totalPrice">Total Price: $0.00</div>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="static/css/categories.js"></script>
+
 </body>
 </html>
