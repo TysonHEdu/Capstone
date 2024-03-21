@@ -23,5 +23,6 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),  # Add this line
     path('inventory/', include('inventory.urls')),  
     path('authentication_system/', include('django.contrib.auth.urls')),  
-    path('authentication_system/', include('authentication_system.urls'))  
+    path('authentication_system/', include('authentication_system.urls')),
+    path('suppliers/', include('supplier_management.urls'))
 ] 
