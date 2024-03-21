@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import SuppliersList
+from django.http import HttpResponse
 
-def suppliers_list(request):
-    return render(request, 'supplier_management/suppliermanagement.html')
+# Create your views here.
+def supplierslist(request):
+    # Your code logic goes here
+    return HttpResponse("Hello, World!")

@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-class SuppliersListAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+class SupplierAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone', 'email')
 
-admin.site.register(SuppliersList, SuppliersListAdmin)

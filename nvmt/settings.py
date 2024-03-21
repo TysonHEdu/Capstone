@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'inventory' ,
     'recipes' ,
     'authentication_system' ,
+    'supplier_management' ,
 ]
 
 MIDDLEWARE = [
