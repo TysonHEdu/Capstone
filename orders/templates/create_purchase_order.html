@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Purchase Order</title>
+</head>
+<body>
+    <h1>Create Purchase Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ purchase_order_form.as_p }}
+        {{ order_item_form.as_p }}
+        <button type="submit">Create Purchase Order</button>
+    </form>
+</body>
+</html>

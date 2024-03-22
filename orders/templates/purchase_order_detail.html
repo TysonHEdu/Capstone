@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Order Detail</title>
+</head>
+<body>
+    <h1>Purchase Order Detail</h1>
+    <p><strong>Order ID:</strong> {{ purchase_order.id }}</p>
+    <p><strong>Supplier:</strong> {{ purchase_order.supplier }}</p>
+    <p><strong>Order Date:</strong> {{ purchase_order.order_date }}</p>
+    <p><strong>Status:</strong> {{ purchase_order.status }}</p>
+
+    <h2>Order Items</h2>
+    <ul>
+        {% for item in purchase_order.items.all %}
+            <li>{{ item.product_name }} - Quantity: {{ item.quantity }}</li>
+        {% empty %}
+            <li>No items found.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_purchase_order' %}">Create Another Purchase Order</a>
+</body>
+</html>

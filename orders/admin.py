@@ -1,14 +1,14 @@
 from django.contrib import admin
-from .models import Order, OrderItem
+from .models import Supplier, PurchaseOrder, OrderItem
 
-class OrderItemInline(admin.TabularInline):
-    model = OrderItem
-    extra = 1
+@admin.register(Supplier)
+class SupplierAdmin(admin.ModelAdmin):
+    list_display = ('name',)  # Add other fields you want to display in the list view
 
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'created_at', 'total_amount', 'is_completed')
-    list_filter = ('user', 'created_at', 'is_completed')
-    search_fields = ('user__username', 'id')
-    inlines = [OrderItemInline]
+@admin.register(PurchaseOrder)
+class PurchaseOrderAdmin(admin.ModelAdmin):
+    list_display = ('id', 'supplier', 'order_date', 'status')  # Add other fields you want to display in the list view
 
-admin.site.register(Order, OrderAdmin)
+@admin.register(OrderItem)
+class OrderItemAdmin(admin.ModelAdmin):
+    list_display = ('product_name', 'quantity', 'purchase_order')  # Add other fields you want to display in the list view

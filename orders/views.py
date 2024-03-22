@@ -1,15 +1,22 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Order, Purchase
-from django.contrib import messages
-from inventory.models import InventoryItem
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import PurchaseOrderForm, OrderItemForm
+from .models import PurchaseOrder
 
-def calculate_order_total(order_id):
-    order = Order.objects.get(id=order_id)
-    total = sum(item.quantity * item.unit_price for item in order.items.all())
-    return total
+def create_purchase_order(request):
+    if request.method == 'POST':
+        purchase_order_form = PurchaseOrderForm(request.POST)
+        order_item_form = OrderItemForm(request.POST)
+        if purchase_order_form.is_valid() and order_item_form.is_valid():
+            purchase_order = purchase_order_form.save()
+            order_item = order_item_form.save(commit=False)
+            order_item.purchase_order = purchase_order
+            order_item.save()
+            return redirect('purchase_order_detail', pk=purchase_order.pk)
+    else:
+        purchase_order_form = PurchaseOrderForm()
+        order_item_form = OrderItemForm()
+    return render(request, 'create_purchase_order.html', {'purchase_order_form': purchase_order_form, 'order_item_form': order_item_form})
 
-def order_detail(request, order_id):
-    order = Order.objects.get(id=order_id)
-    total = calculate_order_total(order_id)
-    return render(request, 'orders/order_detail.html', {'order': order, 'total': total})
+def purchase_order_detail(request, pk):
+    purchase_order = get_object_or_404(PurchaseOrder, pk=pk)
+    return render(request, 'purchase_order_detail.html', {'purchase_order': purchase_order})
