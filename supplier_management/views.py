@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+from .models import Supplier_List
 
-# Create your views here.
-def supplierslist(request):
-    # Your code logic goes here
-    return HttpResponse("Hello, World!")
+def supplier_management(request):
+    template = loader.get_template('suppliermanagement.html')
+    return HttpResponse(template.render())
+
+
+def supplier_list(request):
+    supplier_list = Supplier_List.objects.all()
+    return render(request, 'suppliermanagement.html', 
+            {'supplier_list': supplier_list})

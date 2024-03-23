@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4C061D;
+    color: #C5C5C5;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    font-size: 30px; /* Updated font size */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 20px; /* Updated font size */
+}
+
+.column {
+    border: 1px solid #C5C5C5; /* Added border */
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    padding-top: 60px;
+    padding-bottom: 10px;
+}
+
+td {
+    border: 1px solid #C5C5C5; /* Added border to each cell */
+}
