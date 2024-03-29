@@ -19,10 +19,10 @@ class PurchaseOrder(models.Model):
     supplier = models.ForeignKey('Supplier', on_delete=models.SET_NULL, null=True, blank=True)
     order_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
-    # Add other fields as needed
 
     def __str__(self):
-        return f"Purchase Order #{self.id} - {self.supplier.name}"
+        supplier_name = self.supplier.name if self.supplier else 'No Supplier'
+        return f"Purchase Order #{self.id} - {supplier_name}"
 
 class OrderItem(models.Model):
     purchase_order = models.ForeignKey(PurchaseOrder, related_name='items', on_delete=models.CASCADE)
